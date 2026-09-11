@@ -293,9 +293,9 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
         <div id="mSetup">
           <div class="sec-title">⚔ Maç Başla</div>
           <div class="edu-sel" id="eduSel">
-            <button class="edu-btn active" onclick="setEdu('ilkokul',this)">🏫 İlkokul</button>
-            <button class="edu-btn" onclick="setEdu('ortaokul',this)">📚 Ortaokul</button>
-            <button class="edu-btn" onclick="setEdu('lise',this)">🎓 Lise</button>
+            <button class="edu-btn active" onclick="setEdu('primary',this)">🏫 İlkokul</button>
+            <button class="edu-btn" onclick="setEdu('middle',this)">📚 Ortaokul</button>
+            <button class="edu-btn" onclick="setEdu('high_school',this)">🎓 Lise</button>
           </div>
           <div id="clsSelWrap" style="margin-bottom:.75rem"><label style="font-size:.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Sınıf</label>
           <select id="clsSel" onchange="MS.cl=parseInt(this.value);loadSubjects()" style="margin-top:.4rem;width:100%;padding:.8rem 1rem;background:var(--surface2);border:2px solid var(--border);border-radius:12px;color:var(--text);font-family:var(--font-b);font-size:.88rem;font-weight:600;outline:none"></select></div>
@@ -448,7 +448,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
               <div class="fg"><label>Kullanıcı Adı *</label><input type="text" id="nsU" placeholder="ahmet.yilmaz"></div>
               <div class="fg"><label>Şifre *</label><input type="password" id="nsP" placeholder="••••••"></div>
               <div class="fg"><label>Sınıf Adı *</label><input type="text" id="nsCN" placeholder="9-A"></div>
-              <div class="fg"><label>Eğitim Seviyesi</label><select id="nsE"><option value="ilkokul">İlkokul</option><option value="ortaokul">Ortaokul</option><option value="lise" selected>Lise</option></select></div>
+              <div class="fg"><label>Eğitim Seviyesi</label><select id="nsE"><option value="primary">İlkokul</option><option value="middle">Ortaokul</option><option value="high_school" selected>Lise</option></select></div>
               <div class="fg"><label>Sınıf No</label><input type="number" id="nsCL" value="9" min="1" max="12"></div>
               <div class="fg"><label>Okul *</label><select id="nsSch"></select></div>
             </div>
@@ -469,7 +469,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
         <div class="tsec" id="at-users"><div class="tw" id="aUsTbl"><div class="lc"><div class="sp2"></div></div></div></div>
         <div class="tsec" id="at-questions">
           <div class="card" style="margin-bottom:.75rem;display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-end">
-            <div class="fg" style="flex:1;min-width:120px;margin:0"><label>Eğitim</label><select id="qFE" onchange="loadAQ()"><option value="">Tümü</option><option value="ilkokul">İlkokul</option><option value="ortaokul">Ortaokul</option><option value="lise">Lise</option></select></div>
+            <div class="fg" style="flex:1;min-width:120px;margin:0"><label>Eğitim</label><select id="qFE" onchange="loadAQ()"><option value="">Tümü</option><option value="primary">İlkokul</option><option value="middle">Ortaokul</option><option value="high_school">Lise</option></select></div>
             <div class="fg" style="flex:1;min-width:120px;margin:0"><label>Sınıf</label><select id="qFC" onchange="loadAQ()"><option value="">Tümü</option></select></div>
           </div>
           <div class="tw" id="aQTbl"><div class="lc"><div class="sp2"></div></div></div>
@@ -477,7 +477,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
         <div class="tsec" id="at-addQ">
           <div class="card">
             <div class="fgrid">
-              <div class="fg"><label>Eğitim</label><select id="aqE" onchange="updCls();loadAQSubjects()"><option value="ilkokul">İlkokul</option><option value="ortaokul">Ortaokul</option><option value="lise" selected>Lise</option></select></div>
+              <div class="fg"><label>Eğitim</label><select id="aqE" onchange="updCls();loadAQSubjects()"><option value="primary">İlkokul</option><option value="middle">Ortaokul</option><option value="high_school" selected>Lise</option></select></div>
               <div class="fg"><label>Sınıf</label><select id="aqC" onchange="loadAQSubjects()"></select></div>
               <div class="fg"><label>📖 Ders</label><select id="aqSub" onchange="loadAQTopics()"><option value="">Tüm Dersler</option></select></div>
               <div class="fg"><label>Konu</label><select id="aqTp"></select></div>
@@ -500,7 +500,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
           <div class="card">
             <div class="fgrid">
               <div class="fg"><label>Konu Adı *</label><input type="text" id="tpN" placeholder="Doğal Sayılar"></div>
-              <div class="fg"><label>Eğitim</label><select id="tpE" onchange="loadTpSubjects()"><option value="ilkokul">İlkokul</option><option value="ortaokul">Ortaokul</option><option value="lise" selected>Lise</option></select></div>
+              <div class="fg"><label>Eğitim</label><select id="tpE" onchange="loadTpSubjects()"><option value="primary">İlkokul</option><option value="middle">Ortaokul</option><option value="high_school" selected>Lise</option></select></div>
               <div class="fg"><label>Sınıf</label><input type="number" id="tpC" value="9" min="1" max="12" oninput="loadTpSubjects()"></div>
               <div class="fg"><label>📖 Ders *</label><select id="tpSub"><option value="">Seç...</option></select></div>
               <div class="fg"><label>Sıra</label><input type="number" id="tpO" value="0" min="0"></div>
@@ -614,10 +614,11 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--surface2) inset!imp
   <nav class="bn"><div class="bn-inner" id="bnIn"></div></nav>
 </div>
 <script>
-const API='https://justlearnit-hcwl.onrender.com';
+const API='https://justlearnit-0qfm.onrender.com';
+// DEV: const API='http://localhost:8000';
 let token=null,userData=null,curSec='dashboard';
-const EDU_MAP={ilkokul:[1,2,3,4],ortaokul:[5,6,7,8],lise:[9,10,11,12]};
-let MS={questions:[],idx:0,correct:0,pts:0,gold:0,topicId:null,topic:null,topicName:'',diff:'kolay',cl:9,edu:'lise',start:0,timeLimit:300};
+const EDU_MAP={primary:[1,2,3,4],middle:[5,6,7,8],high_school:[9,10,11,12]};
+let MS={questions:[],idx:0,correct:0,pts:0,gold:0,topicId:null,topic:null,topicName:'',diff:'kolay',cl:9,edu:'high_school',start:0,timeLimit:300};
 const DT={kolay:300,orta:480,zor:600};
 const BADGES=[
   {name:'İlk Adım',icon:'🧗',desc:'İlk maçını bitir'},
@@ -676,7 +677,7 @@ function initApp(data){
   buildNav(role);
   if(role==='student'){
     const s=data.student;
-    if(s){updTB(s);setSBU(s.full_name,s.class_name);MS.cl=s.class_level||9;MS.edu=s.education_level||'lise';
+    if(s){updTB(s);setSBU(s.full_name,s.class_name);MS.cl=s.class_level||9;MS.edu=s.education_level||'high_school';
       const eduSel=document.getElementById('eduSel');if(eduSel)eduSel.style.display='none';
       const clsWrap=document.getElementById('clsSelWrap');if(clsWrap)clsWrap.style.display='none';
     }
@@ -809,20 +810,20 @@ async function loadUsers(){const w=document.getElementById('aUsTbl');w.innerHTML
 async function togUsr(id,blocked){await api('/admin/users/'+id+'/block',{method:'PATCH',body:JSON.stringify({is_blocked:!blocked})});toast(!blocked?'Kullanıcı engellendi':'Engel kaldırıldı',!blocked?'error':'success');loadUsers();}
 async function loadAQ(){const w=document.getElementById('aQTbl');w.innerHTML='<div class="lc"><div class="sp2"></div></div>';const edu=document.getElementById('qFE')?.value||'';const cls=document.getElementById('qFC')?.value||'';const d=await api('/admin/questions?'+(edu?'education_level='+edu+'&':'')+(cls?'class_level='+cls+'&':''));if(!d||!d.length){w.innerHTML='<div class="es"><span class="ei">❓</span><p>Soru yok.</p></div>';return;}w.innerHTML='<table><thead><tr><th>#</th><th>Soru</th><th>Seviye</th><th>Sınıf</th><th>Konu</th><th>Zorluk</th><th></th></tr></thead><tbody>'+d.map((q,i)=>'<tr><td style="color:var(--muted)">'+(i+1)+'</td><td style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+q.question+'</td><td>'+q.education_level+'</td><td>'+q.class_level+'</td><td style="color:var(--muted)">'+q.topic+'</td><td>'+q.difficult+'</td><td><button class="btn-del" onclick="delQ('+q.id+')">Sil</button></td></tr>').join('')+'</tbody></table>';}
 async function delQ(id){if(!confirm('Soruyu silmek istediğine emin misin?'))return;const r=await api('/admin/questions/'+id,{method:'DELETE'});if(r){toast('Soru silindi','success');loadAQ();}}
-function updCls(){const edu=document.getElementById('aqE')?.value||'lise';const cls=EDU_MAP[edu]||[9,10,11,12];const sel=document.getElementById('aqC');if(sel)sel.innerHTML=cls.map(c=>'<option value="'+c+'">'+c+'</option>').join('');}
-async function loadAQSubjects(){const edu=document.getElementById('aqE')?.value||'lise';const cls=document.getElementById('aqC')?.value||'9';const d=await api('/questions/subjects?class='+cls+'&education_level='+edu);const sel=document.getElementById('aqSub');if(!sel)return;sel.innerHTML='<option value="">Tüm Dersler</option>'+(d||[]).map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');loadAQTopics();}
-async function loadAQTopics(){const edu=document.getElementById('aqE')?.value||'lise';const cls=document.getElementById('aqC')?.value||'9';const subId=document.getElementById('aqSub')?.value||'';let url='/teacher/topics?class_level='+cls+'&education_level='+edu;if(subId)url+='&subject_id='+subId;const d=await api(url);const sel=document.getElementById('aqTp');if(!sel)return;sel.innerHTML=(d||[]).map(t=>'<option value="'+t.id+'">'+t.name+'</option>').join('')||'<option>Konu yok</option>';}
+function updCls(){const edu=document.getElementById('aqE')?.value||'high_school';const cls=EDU_MAP[edu]||[9,10,11,12];const sel=document.getElementById('aqC');if(sel)sel.innerHTML=cls.map(c=>'<option value="'+c+'">'+c+'</option>').join('');}
+async function loadAQSubjects(){const edu=document.getElementById('aqE')?.value||'high_school';const cls=document.getElementById('aqC')?.value||'9';const d=await api('/questions/subjects?class='+cls+'&education_level='+edu);const sel=document.getElementById('aqSub');if(!sel)return;sel.innerHTML='<option value="">Tüm Dersler</option>'+(d||[]).map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');loadAQTopics();}
+async function loadAQTopics(){const edu=document.getElementById('aqE')?.value||'high_school';const cls=document.getElementById('aqC')?.value||'9';const subId=document.getElementById('aqSub')?.value||'';let url='/teacher/topics?class_level='+cls+'&education_level='+edu;if(subId)url+='&subject_id='+subId;const d=await api(url);const sel=document.getElementById('aqTp');if(!sel)return;sel.innerHTML=(d||[]).map(t=>'<option value="'+t.id+'">'+t.name+'</option>').join('')||'<option>Konu yok</option>';}
 async function adminAddQ(){const subId=document.getElementById('aqSub')?.value;if(!subId){toast('Lütfen ders seçin','error');return;}const body={question_text:document.getElementById('aqQ').value.trim(),option_a:document.getElementById('aqA').value.trim(),option_b:document.getElementById('aqB').value.trim(),option_c:document.getElementById('aqCC').value.trim(),option_d:document.getElementById('aqDd').value.trim(),option_e:document.getElementById('aqEe').value.trim()||null,correct_answer:document.getElementById('aqAns').value,class_level:parseInt(document.getElementById('aqC').value),education_level:document.getElementById('aqE').value,topic_id:parseInt(document.getElementById('aqTp').value),subject_id:parseInt(subId),difficult:document.getElementById('aqD').value};if(!body.question_text||!body.option_a||!body.option_b||!body.option_c||!body.option_d){toast('Zorunlu alanları doldur','error');return;}if(!body.topic_id){toast('Lütfen konu seçin','error');return;}const r=await api('/admin/questions',{method:'POST',body:JSON.stringify(body)});if(r){toast(r.message||'Soru eklendi','success');['aqQ','aqA','aqB','aqCC','aqDd','aqEe'].forEach(id=>document.getElementById(id).value='');}}
 async function loadATopics(){const w=document.getElementById('aTpcTbl');w.innerHTML='<div class="lc"><div class="sp2"></div></div>';const d=await api('/admin/topics');if(!d||!d.length){w.innerHTML='<div class="es"><span class="ei">📚</span><p>Konu yok.</p></div>';return;}w.innerHTML='<table><thead><tr><th>#</th><th>Konu</th><th>Seviye</th><th>Sınıf</th><th>Sıra</th><th></th></tr></thead><tbody>'+d.map((t,i)=>'<tr><td style="color:var(--muted)">'+(i+1)+'</td><td style="font-weight:700">'+t.name+'</td><td>'+t.education_level+'</td><td>'+t.class_level+'</td><td>'+t.display_order+'</td><td><button class="btn-del" onclick="delTp('+t.id+')">Sil</button></td></tr>').join('')+'</tbody></table>';}
 async function delTp(id){if(!confirm('Konuyu silmek istediğine emin misin?'))return;const r=await api('/admin/topics/'+id,{method:'DELETE'});if(r){toast('Konu silindi','success');loadATopics();}}
 async function adminAddTopic(){const subId=document.getElementById('tpSub')?.value;if(!subId){toast('Lütfen ders seçin','error');return;}const body={name:document.getElementById('tpN').value.trim(),class_level:parseInt(document.getElementById('tpC').value),education_level:document.getElementById('tpE').value,subject_id:parseInt(subId),display_order:parseInt(document.getElementById('tpO').value||'0')};if(!body.name){toast('Konu adı zorunlu','error');return;}const r=await api('/admin/topics',{method:'POST',body:JSON.stringify(body)});if(r){toast(r.message||'Konu eklendi','success');document.getElementById('tpN').value='';loadATopics();}}
-async function loadTpSubjects(){const edu=document.getElementById('tpE')?.value||'lise';const cls=document.getElementById('tpC')?.value||'9';const d=await api('/questions/subjects?class='+cls+'&education_level='+edu);const sel=document.getElementById('tpSub');if(!sel)return;sel.innerHTML='<option value="">Seç...</option>'+(d||[]).map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');}
+async function loadTpSubjects(){const edu=document.getElementById('tpE')?.value||'high_school';const cls=document.getElementById('tpC')?.value||'9';const d=await api('/questions/subjects?class='+cls+'&education_level='+edu);const sel=document.getElementById('tpSub');if(!sel)return;sel.innerHTML='<option value="">Seç...</option>'+(d||[]).map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');}
 
 // ── CSV IMPORT (Feature 1) ──────────────────────────────────────────
 let _csvPreviewRows=[];
 function downloadSampleCSV(){
   const header='question_text,option_a,option_b,option_c,option_d,option_e,correct_answer,class_level,education_level,topic,subject,difficult';
-  const sample='1+3 kaçtır?,2,3,4,5,,c,1,ilkokul,Toplama ve Çıkarma,Matematik,kolay';
+  const sample='1+3 kaçtır?,2,3,4,5,,c,1,primary,Toplama ve Çıkarma,Matematik,kolay';
   const blob=new Blob([header+'\n'+sample],{type:'text/csv;charset=utf-8;'});
   const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ornek_soru.csv';a.click();URL.revokeObjectURL(url);
 }
